@@ -9,7 +9,7 @@ import {
   CircleDot, Timer, X
 } from 'lucide-react';
 
-const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API = process.env.NEXT_PUBLIC_API_URL || 'https://backend-nu-six-76.vercel.app/api';
 
 type Tab = 'overview' | 'demo' | 'triage' | 'journey' | 'auth' | 'docs';
 
