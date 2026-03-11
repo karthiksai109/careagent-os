@@ -129,20 +129,21 @@ export default function Dashboard() {
       </aside>
 
       {/* Main */}
-      <main className="flex-1 ml-56">
+      <main className="flex-1 ml-56 overflow-x-hidden">
         {/* Top bar */}
         <header className="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6 sticky top-0 z-30">
-          <h2 className="text-sm font-semibold text-slate-800">
+          <h2 className="text-sm font-semibold text-slate-800 shrink-0">
             {NAV.find(n => n.id === tab)?.label}
           </h2>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             {error && (
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-red-50 border border-red-200 rounded-md text-xs text-red-700">
-                <AlertTriangle className="w-3 h-3" /> {error}
-                <button onClick={() => setError(null)}><X className="w-3 h-3" /></button>
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-red-50 border border-red-200 rounded-md text-xs text-red-700 max-w-xs">
+                <AlertTriangle className="w-3 h-3 shrink-0" />
+                <span className="truncate">{error}</span>
+                <button onClick={() => setError(null)} className="shrink-0"><X className="w-3 h-3" /></button>
               </div>
             )}
-            <span className="badge-success"><CheckCircle2 className="w-3 h-3 mr-1" /> System Healthy</span>
+            <span className="badge-success shrink-0"><CheckCircle2 className="w-3 h-3 mr-1" /> System Healthy</span>
           </div>
         </header>
 
@@ -236,7 +237,7 @@ export default function Dashboard() {
           {tab === 'demo' && (
             <div className="space-y-6 animate-in">
               <div className="card p-6">
-                <div className="flex items-start justify-between mb-5">
+                <div className="flex items-start justify-between gap-4 mb-5 flex-wrap sm:flex-nowrap">
                   <div>
                     <h3 className="text-base font-semibold text-slate-900">Full System Demo</h3>
                     <p className="text-sm text-slate-500 mt-1">

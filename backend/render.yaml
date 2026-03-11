@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: careagent-os-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: CORS_ORIGINS
+        value: "https://careagent-os-app.netlify.app,http://localhost:3000"
