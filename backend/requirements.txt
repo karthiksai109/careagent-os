@@ -1,0 +1,29 @@
+# Core
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+pydantic-settings
+
+# Database
+sqlalchemy[asyncio]
+aiosqlite
+
+# AI/LLM
+openai
+
+# Auth & Security
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+
+# WebSockets
+websockets
+
+# HTTP
+httpx
+
+# Utilities
+jinja2
+python-dateutil
+structlog
